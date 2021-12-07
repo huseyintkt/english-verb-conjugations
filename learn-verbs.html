@@ -57,13 +57,34 @@
         <!-- MAIN START -->
         <main>
             <div class="container">
-                <div class="row">
+                <div class="row mt-5">
                     <div class="col-4 mx-auto">
-                        <h2 class="mt-5 mb-3">Learn Verbs</h2>
-                        <button id="new-verb" class="btn btn-primary my-3">
-                            New Verb
-                        </button>
-                        <ul id="learn-verbs-container" class="list-group"></ul>
+                        <div class="learn-verbs">
+                            <table
+                                class="
+                                    table table-bordered table-hover
+                                    text-center
+                                "
+                            >
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th class="first-title-width"></th>
+                                        <th class="title-width">V1</th>
+                                        <th class="title-width">V2</th>
+                                        <th class="title-width">V3</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="learn-verbs-container"></tbody>
+                            </table>
+                            <div>
+                                <button
+                                    id="new-verb"
+                                    class="btn btn-primary my-3 float-end"
+                                >
+                                    New Verb
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

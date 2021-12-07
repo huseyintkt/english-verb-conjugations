@@ -14,7 +14,7 @@ let verbList = [
         verb2Name: 'was/were',
         verb2Pronunciation: 'vaz/vör',
         verb3Name: 'been',
-        verb3Pronunciation: 'biim',
+        verb3Pronunciation: 'biin',
         verbTurkish: 'olmak',
     },
     {
