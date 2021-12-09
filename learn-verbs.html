@@ -29,11 +29,9 @@
     </head>
     <body>
         <!-- NAVBAR START -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand text-danger fw-bold fs-3" href="#"
-                    >EVC</a
-                >
+                <a class="navbar-brand text-white fw-bold fs-3" href="#">EVC</a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -55,8 +53,8 @@
                                 >All Irregular Verbs List</a
                             >
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="./learn-verbs.html"
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./learn-verbs.html"
                                 >Learn Verbs</a
                             >
                         </li>
@@ -75,7 +73,7 @@
         <main>
             <div class="container">
                 <div class="row mt-5">
-                    <div class="col-4 mx-auto">
+                    <div class="col-lg-4 mx-auto">
                         <div class="learn-verbs">
                             <table
                                 class="
@@ -91,7 +89,7 @@
                                         <th class="title-width">V3</th>
                                     </tr>
                                 </thead>
-                                <tbody id="learn-verbs-container"></tbody>
+                                <tbody id="verb-container"></tbody>
                             </table>
                             <div>
                                 <button
@@ -118,7 +116,7 @@
         ></script>
 
         <script src="js/database.js"></script>
-        <script src="js/functions.js"></script>
+        <script src="js/helper.js"></script>
         <script src="js/learn-verbs.js"></script>
     </body>
 </html>

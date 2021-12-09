@@ -1,9 +1,10 @@
-let allIrregularVerbsContainer = getElementById(
-    'all-irregular-verbs-container'
-);
+let verbsContainer = getElementById('verbs-container');
 
-allIrregularVerbsContainer.innerHTML = verbList
-    .map((verb, index) => {
+/**
+ * Tum fiilleri render eder.
+ */
+verbsContainer.innerHTML = verbList
+    .map((verb) => {
         return `
     <tr>
         <th>${verb.verb1Name}</th>

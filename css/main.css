@@ -9,3 +9,16 @@ body {
 .learn-verbs .title-width {
     width: 95px;
 }
+
+.navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.fa-check-circle {
+    color: #00b74a;
+}
+
+.fa-times-circle {
+    color: #f93154;
+}
