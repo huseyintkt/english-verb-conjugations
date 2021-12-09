@@ -95,7 +95,7 @@ function handleChangeV1(pVerbIndex) {
     let verb = verbList[pVerbIndex];
     let input = getElementById('input-v1');
     let iconContainer = getElementById('check-icon-v1');
-    if (verb.verb1Name === input.value) {
+    if (verb.verb1Name === input.value.toLowerCase().trim()) {
         iconContainer.innerHTML = `<i class="fas fa-check-circle"></i>`;
     } else {
         iconContainer.innerHTML = `<i class="fas fa-times-circle"></i>`;
@@ -111,7 +111,7 @@ function handleChangeV2(pVerbIndex) {
     let verb = verbList[pVerbIndex];
     let input = getElementById('input-v2');
     let iconContainer = getElementById('check-icon-v2');
-    if (verb.verb2Name === input.value) {
+    if (verb.verb2Name === input.value.toLowerCase().trim()) {
         iconContainer.innerHTML = `<i class="fas fa-check-circle"></i>`;
     } else {
         iconContainer.innerHTML = `<i class="fas fa-times-circle"></i>`;
@@ -127,7 +127,7 @@ function handleChangeV3(pVerbIndex) {
     let verb = verbList[pVerbIndex];
     let input = getElementById('input-v3');
     let iconContainer = getElementById('check-icon-v3');
-    if (verb.verb3Name === input.value) {
+    if (verb.verb3Name === input.value.toLowerCase().trim()) {
         iconContainer.innerHTML = `<i class="fas fa-check-circle"></i>`;
     } else {
         iconContainer.innerHTML = `<i class="fas fa-times-circle"></i>`;
