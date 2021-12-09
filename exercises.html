@@ -75,55 +75,7 @@
         <main>
             <div class="container">
                 <div class="row mt-5">
-                    <div class="col-lg-3">
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 id="verb-for-exercises"></h5>
-                            <button
-                                id="get-random-verb-for-exercises"
-                                class="btn btn-primary"
-                            >
-                                New
-                            </button>
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">V1</span>
-                            <input
-                                id="input-v1"
-                                type="text"
-                                class="form-control"
-                                aria-label="Amount (to the nearest dollar)"
-                            />
-                            <span class="input-group-text">X</span>
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">V2</span>
-                            <input
-                                id="input-v2"
-                                type="text"
-                                class="form-control"
-                                aria-label="Amount (to the nearest dollar)"
-                            />
-                            <span class="input-group-text">X</span>
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">V3</span>
-                            <input
-                                id="input-v3"
-                                type="text"
-                                class="form-control"
-                                aria-label="Amount (to the nearest dollar)"
-                            />
-                            <span class="input-group-text">X</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-3">
-                            <button id="btn-show" class="btn btn-primary">
-                                Show
-                            </button>
-                            <button id="btn-clear" class="btn btn-primary">
-                                Clear
-                            </button>
-                        </div>
-                    </div>
+                    <div class="col-lg-3" id="verb-container"></div>
                     <div class="col-lg-9">
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
@@ -148,7 +100,7 @@
                                     <div class="accordion-body">
                                         <div
                                             class="row"
-                                            id="exercises-all-irregular-verbs"
+                                            id="all-verb-container"
                                         ></div>
                                     </div>
                                 </div>

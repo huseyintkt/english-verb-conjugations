@@ -1,56 +1,98 @@
-const exercisesAllIrregularVerbs = getElementById(
-    'exercises-all-irregular-verbs'
-);
+/**
+ * Containers
+ */
+const allVerbsContainer = getElementById('all-verb-container');
+const verbContainer = getElementById('verb-container');
 
-const btnGetRandomVerbForExercises = getElementById(
-    'get-random-verb-for-exercises'
-);
-
-const btnShow = getElementById('btn-show');
-const btnClear = getElementById('btn-clear');
-
-const inputV1 = getElementById('input-v1');
-const inputV2 = getElementById('input-v2');
-const inputV3 = getElementById('input-v3');
-
-const verbForExercises = getElementById('verb-for-exercises');
-
-exercisesAllIrregularVerbs.innerHTML = verbList
+/**
+ * Tum fiiller render edilir.
+ */
+allVerbsContainer.innerHTML = verbList
     .map((verb, index) => {
         return `
         <div class="col-lg-2 mb-3">
-           <a onClick='getVerbForExercises(${index})' href='#'>${verb.verb1Name}</a>
+           <a onClick='getVerb(${index})' href='#'>${verb.verb1Name}</a>
         </div>
     `;
     })
     .join('');
 
-btnGetRandomVerbForExercises.addEventListener('click', function () {
-    getRandomVerbForExercises();
-});
+/**
+ * Bu fonksiyon, random veya index numarasina gore fiili render eder.
+ */
+function getVerb(pVerbIndex) {
+    let index;
+    if (pVerbIndex === undefined) {
+        index = getRandomNumber(verbList.length);
+    } else {
+        index = pVerbIndex;
+    }
 
-btnShow.addEventListener('click', function () {
-    console.log('btn show');
-});
-
-btnClear.addEventListener('click', function () {
-    clearInputs();
-});
-
-function getVerbForExercises(pVerbIndex) {
-    verbForExercises.innerHTML = verbList[pVerbIndex].verbTurkish;
+    let verb = verbList[index];
+    verbContainer.innerHTML = `
+        <div class="d-flex justify-content-between mb-3">
+            <h5 id="verb-turkish">${verb.verbTurkish}</h5>
+            <button
+                class="btn btn-primary"
+                onclick="getVerb()"
+            >
+                New
+            </button>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">V1</span>
+            <input
+                type="text"
+                class="form-control input-verb"
+                aria-label="Amount (to the nearest dollar)"
+            />
+            <span class="input-group-text">X</span>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">V2</span>
+            <input
+                type="text"
+                class="form-control input-verb"
+                aria-label="Amount (to the nearest dollar)"
+            />
+            <span class="input-group-text">X</span>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">V3</span>
+            <input
+                type="text"
+                class="form-control input-verb"
+                aria-label="Amount (to the nearest dollar)"
+            />
+            <span class="input-group-text">X</span>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+            <button class="btn btn-primary" onclick="showAnswers(${index})">
+                Show
+            </button>
+            <button class="btn btn-primary" onclick="clearInputs()">
+                Clear
+            </button>
+        </div>
+    `;
 }
 
-function getRandomVerbForExercises() {
-    let randomNumber = getRandomNumber(verbList.length);
-    let randomVerb = verbList[randomNumber];
-    verbForExercises.innerHTML = randomVerb.verbTurkish;
-}
-
+/**
+ * Bu fonksiyon, input lari temizler.
+ */
 function clearInputs() {
-    inputV1.value = '';
-    inputV2.value = '';
-    inputV3.value = '';
+    let inputs = document.getElementsByClassName('input-verb');
+    for (input of inputs) {
+        input.value = '';
+    }
 }
 
-getRandomVerbForExercises();
+function showAnswers(pIndex) {
+    let verb = verbList[pIndex];
+    let inputs = document.getElementsByClassName('input-verb');
+    inputs[0].value = verb.verb1Name;
+    inputs[1].value = verb.verb2Name;
+    inputs[2].value = verb.verb3Name;
+}
+
+getVerb();
